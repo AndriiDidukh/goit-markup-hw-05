@@ -1,6 +1,8 @@
 :root {
     --footer-text-color: #f4f4fd;
     --modal-input-color: #8e8f99;
+    --modal-link-color: #4d5ae5;
+    --modal-checked-color: #404bbf;
 }
 
 body {
@@ -27,7 +29,7 @@ ul {
 
 a,
 img {
-    display: block;
+    display: inline-block;
 }
 
 address {
@@ -601,7 +603,8 @@ address {
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-button:hover .modal-close-button-icon {
+.modal-close-button:hover .modal-close-button-icon,
+.modal-close-button:focus .modal-close-button-icon {
     fill: #ffffff;
 }
 
@@ -641,6 +644,9 @@ address {
     padding-left: 38px;
     outline: transparent;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-window-input:focus {
     border-color: #4d5ae5;
 }
 
@@ -672,6 +678,8 @@ address {
     background-color: transparent;
     resize: none;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 8px 16px;
+    outline: transparent;
 }
 
 .modal-textarea:focus {
@@ -689,7 +697,7 @@ address {
     color: var(--modal-input-color);
 }
 
-.modal-privacy-policy {
+.modal-span {
     width: 16px;
     height: 16px;
     border: 1px solid rgba(46, 47, 66, 0.4);
@@ -717,4 +725,14 @@ address {
     background-color: #4d5ae5;
     border: none;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-ckeckbox-link {
+    color: var(--modal-link-color);
+}
+
+.modal-checkbox:checked .modal-span {
+    background-color: var(--modal-checked-color);
+    border: none;
+    fill: var(--footer-text-color);
 }
